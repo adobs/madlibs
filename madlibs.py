@@ -47,14 +47,14 @@ def show_madlib():
     name = request.args.get("name")
     color = request.args.get("color")
     noun = request.args.get("noun") 
-    adjective = request.args.get("adjective")   
+    adjectives = request.args.getlist("adjectives")  
 
     return render_template("madlib.html", 
                            person=person, 
                            name=name, 
                            color=color, 
                            noun=noun, 
-                           adjective=adjective,
+                           adjectives=adjectives,
                            )
 
 if __name__ == '__main__':
