@@ -6,21 +6,17 @@
     <h1>Madlibs!</h1>
     <form action="/madlib">
         <label>Type the name of any person: <input type="text" name="name"></label><br>
-        <label>Pick a color, any color: <select name="color">
-            <option value="pink">Pink</option>
-            <option value="purple">Purple</option>
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-            </select>
-        </label><br>
+        Pick a color, any color: 
+        <select name="color">
+            <label><option value="pink">Pink</label>
+            <label><option value="purple">Purple</label>
+            <label><option value="red">Red</label>
+            <label><option value="blue">Blue</label>
+            </select><br>
         <label>Name a thing: <input type="text" name="noun"></label><br>
         <label>Enter an adjective: <input type="text" name="adjective"></label><br>
         <input type="submit">
-        <input type="hidden" name="person" value="{{person}}">
+        <input type="hidden" name="person" value="{{ person }}">
     </form>
-
-
-
-
 
 {% endblock %}
