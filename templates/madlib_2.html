@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block title %}{{person}}'s MadLibs{% endblock %}
+
+{% block content %}
+
+<p>I like to eat
+    {% if adjectives %}
+        {% for adjective in adjectives %}
+            {{ adjective }}, 
+        {% endfor %}
+    {% endif%}
+
+crunchy food </p>
+
+{% endblock %}

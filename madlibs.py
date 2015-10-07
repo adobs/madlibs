@@ -49,13 +49,15 @@ def show_madlib():
     noun = request.form.get("noun") 
     adjectives = request.form.getlist("adjectives")  
 
-    return render_template("madlib.html", 
+    answer = render_template("madlib.html", 
                            person=person, 
                            name=name, 
                            color=color, 
                            noun=noun, 
                            adjectives=adjectives,
-                           )
+                           ),
+
+    return answer
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app
