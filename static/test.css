@@ -1,8 +1,18 @@
 h1{
     font-family: sans-serif;
     color: blue;
+    text-align: center;
     
 }
 p{
     font-style: italic;
+}
+
+form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 20px;
+    border: 20px solid LightSkyBlue; 
+    font-family: sans-serif;
+    line-height: 2em;
 }

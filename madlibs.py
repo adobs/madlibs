@@ -1,11 +1,12 @@
 from random import choice
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect
 
 
 # "__name__" is a special Python variable for the name of the current module
 # Flask wants to know this to know what any imported things are relative to.
 app = Flask(__name__)
+app.secret_key = 'secretkey'
 
 # route to handle the landing page of a website.
 @app.route('/')
@@ -48,16 +49,22 @@ def show_madlib():
     color = request.form.get("color")
     noun = request.form.get("noun") 
     adjectives = request.form.getlist("adjectives")  
+    randomlib = choice(["madlib.html", "madlib_2.html"])
 
-    answer = render_template("madlib.html", 
+    # if the user doesn't type in anything:
+    if not name:
+        flash("please type in a name")
+
+    else: 
+        return render_template(randomlib, 
                            person=person, 
                            name=name, 
                            color=color, 
                            noun=noun, 
                            adjectives=adjectives,
-                           ),
+                           )
 
-    return answer
+    return(redirect("/game"))
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app
